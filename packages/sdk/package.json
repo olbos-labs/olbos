@@ -1,0 +1,56 @@
+{
+  "name": "@olbos/sdk",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.4",
+    "bs58": "^6.0.0",
+    "tweetnacl": "^1.0.3",
+    "x402-solana": "2.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.8.0"
+  },
+  "description": "Olbos SDK — give your Solana agent a treasury. Auto-paid x402 calls, per-strategy Swig custody, owner-signed break-glass.",
+  "license": "MIT",
+  "homepage": "https://olbos.tech",
+  "keywords": [
+    "solana",
+    "x402",
+    "treasury",
+    "yield",
+    "agents",
+    "mcp",
+    "swig"
+  ],
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Olbos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olbos-labs/olbos.git",
+    "directory": "packages/sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/olbos-labs/olbos/issues"
+  }
+}

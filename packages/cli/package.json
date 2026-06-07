@@ -1,0 +1,59 @@
+{
+  "name": "@olbos/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "olbos": "./dist/index.js"
+  },
+  "scripts": {
+    "init": "tsx src/index.ts init",
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@olbos/sdk": "workspace:*",
+    "@solana/web3.js": "^1.98.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0"
+  },
+  "description": "Olbos CLI — onboarding wizard for the autonomous treasury engine (olbos init).",
+  "license": "MIT",
+  "homepage": "https://olbos.tech",
+  "keywords": [
+    "solana",
+    "x402",
+    "treasury",
+    "yield",
+    "agents",
+    "mcp",
+    "swig"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Olbos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olbos-labs/olbos.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/olbos-labs/olbos/issues"
+  }
+}
