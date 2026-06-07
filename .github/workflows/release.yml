@@ -24,7 +24,6 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      # auth via OIDC trusted publishing (configured on each package on npmjs.com).
+      # needs pnpm >= 10 (OIDC support); provenance is generated automatically.
       - run: pnpm -r publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: "true"

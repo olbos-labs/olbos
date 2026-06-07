@@ -2,7 +2,7 @@
   "name": "olbos",
   "private": true,
   "description": "Olbos — autonomous treasury engine for the x402 economy (Solana). Open-source SDK, MCP server, and CLI.",
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@10.34.1",
   "engines": {
     "node": ">=22"
   },
