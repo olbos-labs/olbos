@@ -17,6 +17,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { readFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import { createOlbos, usdc, type PaymentMode } from "@olbos/sdk";
 
 async function buildPayment(): Promise<PaymentMode> {
@@ -47,7 +48,8 @@ const olbos = createOlbos({
   ownerKeypair,
 });
 
-const server = new McpServer({ name: "olbos", version: "0.0.1" });
+const { version } = createRequire(import.meta.url)("../package.json");
+const server = new McpServer({ name: "olbos", version });
 
 const json = (data: unknown) => ({
   content: [{ type: "text" as const, text: JSON.stringify(data, null, 2) }],

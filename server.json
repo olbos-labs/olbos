@@ -1,0 +1,57 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.olbos-labs/olbos",
+  "description": "Olbos MCP server — any LLM agent gets a yield treasury on Solana: deploy, fund (the x402 payment IS the deposit), rebalance, withdraw.",
+  "repository": {
+    "url": "https://github.com/olbos-labs/olbos",
+    "source": "github"
+  },
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@olbos/mcp",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "OLBOS_API",
+          "description": "Olbos API base URL (default http://localhost:4020)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        },
+        {
+          "name": "OLBOS_PAYMENT",
+          "description": "Payment mode: dev | x402 (default dev)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        },
+        {
+          "name": "OLBOS_AGENT_KEYPAIR",
+          "description": "Path to the agent keypair JSON (x402 mode)",
+          "isRequired": false,
+          "format": "filepath",
+          "isSecret": false
+        },
+        {
+          "name": "OLBOS_RPC",
+          "description": "Solana RPC endpoint (x402 mode)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        },
+        {
+          "name": "OLBOS_OWNER_KEYPAIR",
+          "description": "Path to the custody-root keypair JSON — enables owner break-glass tools (kill switch, on-chain custody revoke)",
+          "isRequired": false,
+          "format": "filepath",
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
